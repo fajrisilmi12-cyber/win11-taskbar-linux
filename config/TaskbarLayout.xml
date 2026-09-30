@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Windows 11 Taskbar & Start Menu Layout Configuration for Linux
+  Follows Microsoft LayoutModificationTemplate XML standard.
+-->
+<LayoutModificationTemplate xmlns="http://schemas.microsoft.com/Start/2014/LayoutModification">
+
+  <!-- ========================================================
+       1. TASKBAR BOTTOM (CENTERED DOCK)
+       ======================================================== -->
+  <CustomTaskbarLayoutCollection>
+    <TaskbarPinList>
+      <App id="start" name="Start" action="toggle_start" icon="windows" />
+      <App id="search" name="Search" action="toggle_search" icon="search" />
+      <App id="taskview" name="Task View" action="task_view" icon="taskview" />
+      <App id="explorer" name="File Explorer" exec="thunar" icon="explorer" />
+      <App id="edge" name="Browser" exec="chromium" icon="edge" />
+      <App id="terminal" name="Terminal" exec="xfce4-terminal" icon="terminal" />
+    </TaskbarPinList>
+  </CustomTaskbarLayoutCollection>
+
+  <!-- ========================================================
+       2. START MENU PINNED APPS (GRID 6 COLUMNS)
+       ======================================================== -->
+  <StartMenuLayout>
+    <PinnedList>
+      <App name="Terminal" exec="xfce4-terminal" icon="terminal" category="System" />
+      <App name="File Explorer" exec="thunar" icon="explorer" category="System" />
+      <App name="Edge Browser" exec="chromium" icon="edge" category="Web" />
+      <App name="Text Editor" exec="mousepad" icon="notepad" category="Accessories" />
+      <App name="Calculator" exec="galculator" icon="calculator" category="Accessories" />
+      <App name="Settings" exec="xfce4-settings-manager" icon="settings" category="Settings" />
+      
+      <!-- Security & Pentest Tools -->
+      <App name="Nmap" exec="xfce4-terminal -T 'Nmap' -e 'nmap --help; bash'" icon="nmap" category="Security" />
+      <App name="Metasploit" exec="xfce4-terminal -T 'Metasploit' -e 'msfconsole'" icon="metasploit" category="Security" />
+      <App name="Wireshark" exec="xfce4-terminal -T 'Wireshark' -e 'tshark; bash'" icon="wireshark" category="Security" />
+      <App name="BurpSuite" exec="burpsuite" icon="burp" category="Security" />
+      <App name="Bettercap" exec="xfce4-terminal -T 'Bettercap' -e 'bettercap'" icon="bettercap" category="Security" />
+      <App name="SQLMap" exec="xfce4-terminal -T 'SQLMap' -e 'sqlmap -h; bash'" icon="sqlmap" category="Security" />
+    </PinnedList>
+  </StartMenuLayout>
+
+  <!-- ========================================================
+       3. RECOMMENDED SECTION
+       ======================================================== -->
+  <RecommendedList>
+    <Item name="Documents" time="Recent" type="folder" />
+    <Item name="Downloads" time="Recent" type="folder" />
+  </RecommendedList>
+
+</LayoutModificationTemplate>
